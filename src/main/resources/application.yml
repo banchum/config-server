@@ -12,7 +12,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/sparta-hub-5/project-configs
+          #uri: https://github.com/sparta-hub-5/project-configs
+          uri: https://github.com/banchum/project-configs
           default-label: main
           search-paths:
             - configs
@@ -22,6 +23,11 @@ spring:
 
 #유레카 등록
 eureka:
+  instance:
+    # 도커 컨테이너 접근을 위한 설정
+    prefer-ip-address: false
+    hostname: localhost
+
   client:
     register-with-eureka: true
     fetch-registry: true
